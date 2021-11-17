@@ -13,3 +13,4 @@ class HomeErrorState extends AppStates {
 }
 class SearchLoadingState extends AppStates{}
 class SearchLoadedState extends AppStates{}
+class AddToFavouriteState extends AppStates{}

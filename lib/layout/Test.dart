@@ -18,15 +18,9 @@ class TestCubit extends StatelessWidget {
           var products = AppCubit.get(context).products;
           return Scaffold(
                   backgroundColor: Colors.white,
-                  appBar: AppBar(
-                    title: Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Text("MakeUp App"),
-                    ),
-                    backgroundColor: Colors.deepPurpleAccent,
-                    elevation: 5,
-                  ),
-                  body: state is HomeLoadingState?Center(child: CircularProgressIndicator(),):
+            appBar: buildAppBar(title: "MakeUp App"),
+
+            body: state is HomeLoadingState?Center(child: CircularProgressIndicator(),):
                   SingleChildScrollView(
                     child: Column(
                       children: [

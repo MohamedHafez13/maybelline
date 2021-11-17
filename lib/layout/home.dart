@@ -15,15 +15,8 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+appBar: buildAppBar(title: "MakeUp App"),
 
-      appBar: AppBar(
-        title: Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: Text("MakeUp App"),
-        ),
-        backgroundColor: Colors.deepPurpleAccent,
-        elevation: 5,
-      ),
       body: SingleChildScrollView(
         child: Column(
           children: [

@@ -17,12 +17,13 @@ class AppCubit extends Cubit<AppStates> {
   // late  Map<String,dynamic> products;
   List<Product> products = [];
   List<Product> searchList = [];
+  List<Product> favouriteList = [];
+
 
   fetchProductsData() {
     emit(HomeLoadingState());
     RemoteServices.fetchProducts().then((value) {
       products = value;
-      //  products =productFromJson(value.toString());
       emit(HomeSuccessState());
     }).catchError((error) {
       print(error.toString());
@@ -36,5 +37,11 @@ class AppCubit extends Cubit<AppStates> {
       searchList=value;
       emit(SearchLoadedState());
     });
+  }
+
+  addToFavourite(Product product){
+    emit(AddToFavouriteState());
+    favouriteList.add(product);
+
   }
 }
